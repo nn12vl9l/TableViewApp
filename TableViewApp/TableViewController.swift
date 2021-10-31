@@ -56,6 +56,17 @@ class TableViewController: UITableViewController {
         return cell
     }
     
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+        taskArray.remove(at: indexPath.row)
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+
+        }
+}
+
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -102,4 +113,3 @@ class TableViewController: UITableViewController {
     }
     */
 
-}
