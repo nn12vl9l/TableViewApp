@@ -58,9 +58,10 @@ class TableViewController: UITableViewController {
         
         if editingStyle == UITableViewCell.EditingStyle.delete{
             taskArray.remove(at: indexPath.row)
-            let indexPaths = [indexPath]
             UserDefaults.standard.set(taskArray, forKey: "add")
-            tableView.deleteRows(at: indexPaths, with: .automatic)
+//            let indexPaths = [indexPath]
+//            tableView.deleteRows(at: indexPaths, with: .automatic)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         }
         
     }
